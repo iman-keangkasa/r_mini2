@@ -1,0 +1,558 @@
+MoveIt version 1.1.9-Alpha
+Experiment Start1_Pick1
+Running on iman
+Starting at 2022-07-04T09:05:40.802112
+<<<|
+Motion plan request:
+workspace_parameters: 
+  header: 
+    seq: 0
+    stamp: 0.000000000
+    frame_id: 
+  min_corner: 
+    x: -1
+    y: -1
+    z: -1
+  max_corner: 
+    x: 1
+    y: 1
+    z: 1
+start_state: 
+  joint_state: 
+    header: 
+      seq: 0
+      stamp: 0.000000000
+      frame_id: world
+    name[]
+      name[0]: joint1
+      name[1]: joint2
+      name[2]: joint3
+      name[3]: joint4
+      name[4]: joint5
+      name[5]: joint6
+    position[]
+      position[0]: -0.515006
+      position[1]: 2.13819
+      position[2]: -0.104012
+      position[3]: 2.23915
+      position[4]: 3.81989
+      position[5]: -2.36328
+    velocity[]
+    effort[]
+  multi_dof_joint_state: 
+    header: 
+      seq: 0
+      stamp: 0.000000000
+      frame_id: world
+    joint_names[]
+    transforms[]
+    twist[]
+    wrench[]
+  attached_collision_objects[]
+  is_diff: 0
+goal_constraints[]
+  goal_constraints[0]: 
+    name: 
+    joint_constraints[]
+      joint_constraints[0]: 
+            joint_name: joint1
+        position: 0.52707
+        tolerance_above: 2.22045e-16
+        tolerance_below: 2.22045e-16
+        weight: 1
+      joint_constraints[1]: 
+            joint_name: joint2
+        position: 2.27799
+        tolerance_above: 2.22045e-16
+        tolerance_below: 2.22045e-16
+        weight: 1
+      joint_constraints[2]: 
+            joint_name: joint3
+        position: -0.287265
+        tolerance_above: 2.22045e-16
+        tolerance_below: 2.22045e-16
+        weight: 1
+      joint_constraints[3]: 
+            joint_name: joint4
+        position: 1.19587
+        tolerance_above: 2.22045e-16
+        tolerance_below: 2.22045e-16
+        weight: 1
+      joint_constraints[4]: 
+            joint_name: joint5
+        position: 2.57968
+        tolerance_above: 2.22045e-16
+        tolerance_below: 2.22045e-16
+        weight: 1
+      joint_constraints[5]: 
+            joint_name: joint6
+        position: -1.03898
+        tolerance_above: 2.22045e-16
+        tolerance_below: 2.22045e-16
+        weight: 1
+    position_constraints[]
+    orientation_constraints[]
+    visibility_constraints[]
+path_constraints: 
+  name: 
+  joint_constraints[]
+  position_constraints[]
+  orientation_constraints[]
+  visibility_constraints[]
+trajectory_constraints: 
+  constraints[]
+reference_trajectories[]
+pipeline_id: 
+planner_id: 
+group_name: arm
+num_planning_attempts: 1
+allowed_planning_time: 10
+max_velocity_scaling_factor: 0.1
+max_acceleration_scaling_factor: 0.1
+cartesian_speed_end_effector_link: 
+max_cartesian_speed: 0
+
+Planning scene: 
+name: Kitchen1
+robot_state: 
+  joint_state: 
+    header: 
+      seq: 0
+      stamp: 0.000000000
+      frame_id: world
+    name[]
+      name[0]: joint1
+      name[1]: joint2
+      name[2]: joint3
+      name[3]: joint4
+      name[4]: joint5
+      name[5]: joint6
+    position[]
+      position[0]: 0
+      position[1]: 1.571
+      position[2]: 0
+      position[3]: 0
+      position[4]: 3.14159
+      position[5]: 0
+    velocity[]
+    effort[]
+  multi_dof_joint_state: 
+    header: 
+      seq: 0
+      stamp: 0.000000000
+      frame_id: world
+    joint_names[]
+    transforms[]
+    twist[]
+    wrench[]
+  attached_collision_objects[]
+  is_diff: 0
+robot_model_name: r_mini
+fixed_frame_transforms[]
+  fixed_frame_transforms[0]: 
+    header: 
+      seq: 0
+      stamp: 0.000000000
+      frame_id: world
+    child_frame_id: world
+    transform: 
+      translation: 
+        x: 0
+        y: 0
+        z: 0
+      rotation: 
+        x: 0
+        y: 0
+        z: 0
+        w: 1
+allowed_collision_matrix: 
+  entry_names[]
+    entry_names[0]: base_link
+    entry_names[1]: camera_link
+    entry_names[2]: camera_usb_plug_link
+    entry_names[3]: link1
+    entry_names[4]: link2
+    entry_names[5]: link3
+    entry_names[6]: link4
+    entry_names[7]: link5
+    entry_names[8]: link6
+  entry_values[]
+    entry_values[0]: 
+        enabled[]
+        enabled[0]: 0
+        enabled[1]: 0
+        enabled[2]: 0
+        enabled[3]: 1
+        enabled[4]: 1
+        enabled[5]: 1
+        enabled[6]: 0
+        enabled[7]: 0
+        enabled[8]: 0
+    entry_values[1]: 
+        enabled[]
+        enabled[0]: 0
+        enabled[1]: 0
+        enabled[2]: 1
+        enabled[3]: 0
+        enabled[4]: 0
+        enabled[5]: 1
+        enabled[6]: 1
+        enabled[7]: 1
+        enabled[8]: 1
+    entry_values[2]: 
+        enabled[]
+        enabled[0]: 0
+        enabled[1]: 1
+        enabled[2]: 0
+        enabled[3]: 0
+        enabled[4]: 0
+        enabled[5]: 1
+        enabled[6]: 1
+        enabled[7]: 1
+        enabled[8]: 1
+    entry_values[3]: 
+        enabled[]
+        enabled[0]: 1
+        enabled[1]: 0
+        enabled[2]: 0
+        enabled[3]: 0
+        enabled[4]: 1
+        enabled[5]: 1
+        enabled[6]: 0
+        enabled[7]: 0
+        enabled[8]: 0
+    entry_values[4]: 
+        enabled[]
+        enabled[0]: 1
+        enabled[1]: 0
+        enabled[2]: 0
+        enabled[3]: 1
+        enabled[4]: 0
+        enabled[5]: 1
+        enabled[6]: 0
+        enabled[7]: 1
+        enabled[8]: 1
+    entry_values[5]: 
+        enabled[]
+        enabled[0]: 1
+        enabled[1]: 1
+        enabled[2]: 1
+        enabled[3]: 1
+        enabled[4]: 1
+        enabled[5]: 0
+        enabled[6]: 1
+        enabled[7]: 1
+        enabled[8]: 1
+    entry_values[6]: 
+        enabled[]
+        enabled[0]: 0
+        enabled[1]: 1
+        enabled[2]: 1
+        enabled[3]: 0
+        enabled[4]: 0
+        enabled[5]: 1
+        enabled[6]: 0
+        enabled[7]: 1
+        enabled[8]: 1
+    entry_values[7]: 
+        enabled[]
+        enabled[0]: 0
+        enabled[1]: 1
+        enabled[2]: 1
+        enabled[3]: 0
+        enabled[4]: 1
+        enabled[5]: 1
+        enabled[6]: 1
+        enabled[7]: 0
+        enabled[8]: 1
+    entry_values[8]: 
+        enabled[]
+        enabled[0]: 0
+        enabled[1]: 1
+        enabled[2]: 1
+        enabled[3]: 0
+        enabled[4]: 1
+        enabled[5]: 1
+        enabled[6]: 1
+        enabled[7]: 1
+        enabled[8]: 0
+  default_entry_names[]
+  default_entry_values[]
+link_padding[]
+  link_padding[0]: 
+    link_name: base_link
+    padding: 0
+  link_padding[1]: 
+    link_name: camera_link
+    padding: 0
+  link_padding[2]: 
+    link_name: camera_usb_plug_link
+    padding: 0
+  link_padding[3]: 
+    link_name: link1
+    padding: 0
+  link_padding[4]: 
+    link_name: link2
+    padding: 0
+  link_padding[5]: 
+    link_name: link3
+    padding: 0
+  link_padding[6]: 
+    link_name: link4
+    padding: 0
+  link_padding[7]: 
+    link_name: link5
+    padding: 0
+  link_padding[8]: 
+    link_name: link6
+    padding: 0
+link_scale[]
+  link_scale[0]: 
+    link_name: base_link
+    scale: 1
+  link_scale[1]: 
+    link_name: camera_link
+    scale: 1
+  link_scale[2]: 
+    link_name: camera_usb_plug_link
+    scale: 1
+  link_scale[3]: 
+    link_name: link1
+    scale: 1
+  link_scale[4]: 
+    link_name: link2
+    scale: 1
+  link_scale[5]: 
+    link_name: link3
+    scale: 1
+  link_scale[6]: 
+    link_name: link4
+    scale: 1
+  link_scale[7]: 
+    link_name: link5
+    scale: 1
+  link_scale[8]: 
+    link_name: link6
+    scale: 1
+object_colors[]
+world: 
+  collision_objects[]
+  octomap: 
+    header: 
+      seq: 0
+      stamp: 0.000000000
+      frame_id: world
+    origin: 
+      position: 
+        x: 0
+        y: 0
+        z: 0
+      orientation: 
+        x: 0
+        y: 0
+        z: 0
+        w: 0
+    octomap: 
+      header: 
+        seq: 0
+        stamp: 0.000000000
+        frame_id: 
+      binary: 0
+      id: 
+      resolution: 0
+      data[]
+is_diff: 0
+
+|>>>
+0 is the random seed
+10 seconds per run
+-1 MB per run
+50 runs per planner
+2.17082 seconds spent to collect the data
+0 enum types
+3 planners
+RRTConnect (ompl)
+0 common properties
+14 properties for each run
+average_waypoint_distance REAL
+final_path_clearance REAL
+final_path_correct BOOLEAN
+final_path_length REAL
+final_path_smoothness REAL
+final_path_time REAL
+path_plan_clearance REAL
+path_plan_correct BOOLEAN
+path_plan_length REAL
+path_plan_smoothness REAL
+path_plan_time REAL
+process_time REAL
+solved BOOLEAN
+time REAL
+50 runs
+5.67827e-16; inf; 1; 4.97292; 7.94686e-16; 0.016747; inf; 1; 4.97292; 7.94686e-16; 0.016747; 0.00892187; 1; 0.0256689; 
+4.88585e-16; inf; 1; 4.97292; 9.34925e-17; 0.0176854; inf; 1; 4.97292; 9.34925e-17; 0.0176854; 0.00576443; 1; 0.0234499; 
+4.48516e-16; inf; 1; 4.97292; 9.34925e-17; 0.0224474; inf; 1; 4.97292; 9.34925e-17; 0.0224474; 0.00473509; 1; 0.0271825; 
+4.33312e-16; inf; 1; 4.97292; 0; 0.0201849; inf; 1; 4.97292; 0; 0.0201849; 0.00503382; 1; 0.0252187; 
+4.20731e-16; inf; 1; 4.97292; 7.94686e-16; 0.0197736; inf; 1; 4.97292; 7.94686e-16; 0.0197736; 0.00495345; 1; 0.0247271; 
+5.67678e-16; inf; 1; 4.97292; 3.7397e-16; 0.0149783; inf; 1; 4.97292; 3.7397e-16; 0.0149783; 0.00471851; 1; 0.0196968; 
+5.02358e-16; inf; 1; 4.97292; 5.14209e-16; 0.0149917; inf; 1; 4.97292; 5.14209e-16; 0.0149917; 0.00344167; 1; 0.0184333; 
+4.89837e-16; inf; 1; 4.97292; 1.86985e-16; 0.0146585; inf; 1; 4.97292; 1.86985e-16; 0.0146585; 0.00323704; 1; 0.0178955; 
+4.87332e-16; inf; 1; 4.97292; 7.4794e-16; 0.0159787; inf; 1; 4.97292; 7.4794e-16; 0.0159787; 0.00336115; 1; 0.0193399; 
+5.25403e-16; inf; 1; 4.97292; 2.80477e-16; 0.0131716; inf; 1; 4.97292; 2.80477e-16; 0.0131716; 0.00300442; 1; 0.016176; 
+5.26655e-16; inf; 1; 4.97292; 3.7397e-16; 0.0154866; inf; 1; 4.97292; 3.7397e-16; 0.0154866; 0.00304845; 1; 0.018535; 
+4.82473e-16; inf; 1; 4.97292; 0; 0.0161996; inf; 1; 4.97292; 0; 0.0161996; 0.00577699; 1; 0.0219766; 
+4.81012e-16; inf; 1; 4.97292; 9.34925e-17; 0.0180613; inf; 1; 4.97292; 9.34925e-17; 0.0180613; 0.00509146; 1; 0.0231527; 
+5.50028e-16; inf; 1; 4.97292; 9.34925e-17; 0.020798; inf; 1; 4.97292; 9.34925e-17; 0.020798; 0.00495787; 1; 0.0257558; 
+4.96634e-16; inf; 1; 4.97292; 2.33731e-16; 0.0158605; inf; 1; 4.97292; 2.33731e-16; 0.0158605; 0.00330848; 1; 0.019169; 
+4.45118e-16; inf; 1; 4.97292; 9.81671e-16; 0.0210876; inf; 1; 4.97292; 9.81671e-16; 0.0210876; 0.00368722; 1; 0.0247748; 
+5.58764e-16; inf; 1; 4.97292; 7.4794e-16; 0.0148512; inf; 1; 4.97292; 7.4794e-16; 0.0148512; 0.0036692; 1; 0.0185204; 
+4.2732e-16; inf; 1; 4.97292; 3.7397e-16; 0.0183819; inf; 1; 4.97292; 3.7397e-16; 0.0183819; 0.00335976; 1; 0.0217417; 
+4.66583e-16; inf; 1; 4.97292; 5.60955e-16; 0.0140846; inf; 1; 4.97292; 5.60955e-16; 0.0140846; 0.00314428; 1; 0.0172289; 
+5.62043e-16; inf; 1; 4.97292; 0; 0.0181126; inf; 1; 4.97292; 0; 0.0181126; 0.00333615; 1; 0.0214488; 
+4.43061e-16; inf; 1; 4.97292; 3.7397e-16; 0.0199731; inf; 1; 4.97292; 3.7397e-16; 0.0199731; 0.00326304; 1; 0.0232361; 
+6.02171e-16; inf; 1; 4.97292; 7.94686e-16; 0.0179317; inf; 1; 4.97292; 7.94686e-16; 0.0179317; 0.00332319; 1; 0.0212549; 
+6.07716e-16; inf; 1; 4.97292; 3.7397e-16; 0.0141161; inf; 1; 4.97292; 3.7397e-16; 0.0141161; 0.00332898; 1; 0.017445; 
+3.95152e-16; inf; 1; 4.97292; 9.34925e-17; 0.0191139; inf; 1; 4.97292; 9.34925e-17; 0.0191139; 0.00372084; 1; 0.0228348; 
+4.11012e-16; inf; 1; 4.97292; 2.80477e-16; 0.0203194; inf; 1; 4.97292; 2.80477e-16; 0.0203194; 0.00496649; 1; 0.0252859; 
+4.42494e-16; inf; 1; 4.97292; 1.07516e-15; 0.0184148; inf; 1; 4.97292; 1.07516e-15; 0.0184148; 0.00414511; 1; 0.0225599; 
+4.09671e-16; inf; 1; 4.97292; 4.67462e-16; 0.0127244; inf; 1; 4.97292; 4.67462e-16; 0.0127244; 0.00202105; 1; 0.0147454; 
+4.4947e-16; inf; 1; 4.97292; 9.34925e-17; 0.0133158; inf; 1; 4.97292; 9.34925e-17; 0.0133158; 0.00153001; 1; 0.0148459; 
+5.63563e-16; inf; 1; 4.97292; 0; 0.0130155; inf; 1; 4.97292; 0; 0.0130155; 0.00143651; 1; 0.014452; 
+5.51251e-16; inf; 1; 4.97292; 8.41432e-16; 0.012198; inf; 1; 4.97292; 8.41432e-16; 0.012198; 0.00142531; 1; 0.0136233; 
+4.31046e-16; inf; 1; 4.97292; 7.94686e-16; 0.011735; inf; 1; 4.97292; 7.94686e-16; 0.011735; 0.00154857; 1; 0.0132836; 
+4.85424e-16; inf; 1; 4.97292; 7.4794e-16; 0.0134725; inf; 1; 4.97292; 7.4794e-16; 0.0134725; 0.00156461; 1; 0.0150371; 
+5.00778e-16; inf; 1; 4.97292; 1.86985e-16; 0.0122823; inf; 1; 4.97292; 1.86985e-16; 0.0122823; 0.00158241; 1; 0.0138647; 
+5.94658e-16; inf; 1; 4.97292; 7.4794e-16; 0.013397; inf; 1; 4.97292; 7.4794e-16; 0.013397; 0.00149419; 1; 0.0148912; 
+4.88376e-16; inf; 1; 4.97292; 0; 0.0126897; inf; 1; 4.97292; 0; 0.0126897; 0.00169395; 1; 0.0143836; 
+4.14172e-16; inf; 1; 4.97292; 9.34925e-17; 0.0124822; inf; 1; 4.97292; 9.34925e-17; 0.0124822; 0.00153567; 1; 0.0140179; 
+5.339e-16; inf; 1; 4.97292; 3.27224e-16; 0.01224; inf; 1; 4.97292; 3.27224e-16; 0.01224; 0.00157962; 1; 0.0138196; 
+4.96604e-16; inf; 1; 4.97292; 0; 0.0122595; inf; 1; 4.97292; 0; 0.0122595; 0.00166022; 1; 0.0139197; 
+4.61127e-16; inf; 1; 4.97292; 4.67462e-16; 0.0132375; inf; 1; 4.97292; 4.67462e-16; 0.0132375; 0.00181348; 1; 0.015051; 
+6.75629e-16; inf; 1; 4.97292; 7.4794e-16; 0.0147101; inf; 1; 4.97292; 7.4794e-16; 0.0147101; 0.00191525; 1; 0.0166253; 
+5.10944e-16; inf; 1; 4.97292; 1.07516e-15; 0.0147888; inf; 1; 4.97292; 1.07516e-15; 0.0147888; 0.0021093; 1; 0.0168981; 
+5.23883e-16; inf; 1; 4.97292; 0; 0.0145854; inf; 1; 4.97292; 0; 0.0145854; 0.00214407; 1; 0.0167294; 
+5.02686e-16; inf; 1; 4.97292; 9.34925e-17; 0.0136227; inf; 1; 4.97292; 9.34925e-17; 0.0136227; 0.0019916; 1; 0.0156143; 
+4.71472e-16; inf; 1; 4.97292; 4.20716e-16; 0.0138917; inf; 1; 4.97292; 4.20716e-16; 0.0138917; 0.00214489; 1; 0.0160366; 
+4.30808e-16; inf; 1; 4.97292; 1.02842e-15; 0.0128456; inf; 1; 4.97292; 1.02842e-15; 0.0128456; 0.00242511; 1; 0.0152707; 
+4.50424e-16; inf; 1; 4.97292; 1.86985e-16; 0.0151892; inf; 1; 4.97292; 1.86985e-16; 0.0151892; 0.00233023; 1; 0.0175194; 
+5.02209e-16; inf; 1; 4.97292; 0; 0.0172673; inf; 1; 4.97292; 0; 0.0172673; 0.00245647; 1; 0.0197237; 
+5.45884e-16; inf; 1; 4.97292; 9.34925e-17; 0.0150634; inf; 1; 4.97292; 9.34925e-17; 0.0150634; 0.00280082; 1; 0.0178642; 
+6.27392e-16; inf; 1; 4.97292; 2.33731e-16; 0.0175978; inf; 1; 4.97292; 2.33731e-16; 0.0175978; 0.00293897; 1; 0.0205367; 
+4.5117e-16; inf; 1; 4.97292; 0; 0.0146526; inf; 1; 4.97292; 0; 0.0146526; 0.00354; 1; 0.0181926; 
+.
+BKPIECE (ompl)
+0 common properties
+3 properties for each run
+average_waypoint_distance REAL
+solved BOOLEAN
+time REAL
+50 runs
+1.79769e+308; 0; 0.0081984; 
+1.79769e+308; 0; 0.00575114; 
+1.79769e+308; 0; 0.0133805; 
+1.79769e+308; 0; 0.0115018; 
+1.79769e+308; 0; 0.0125072; 
+1.79769e+308; 0; 0.0122669; 
+1.79769e+308; 0; 0.0125496; 
+1.79769e+308; 0; 0.0112619; 
+1.79769e+308; 0; 0.0125144; 
+1.79769e+308; 0; 0.0123658; 
+1.79769e+308; 0; 0.012178; 
+1.79769e+308; 0; 0.0119565; 
+1.79769e+308; 0; 0.0123276; 
+1.79769e+308; 0; 0.0130245; 
+1.79769e+308; 0; 0.0111884; 
+1.79769e+308; 0; 0.0120532; 
+1.79769e+308; 0; 0.0124058; 
+1.79769e+308; 0; 0.0120651; 
+1.79769e+308; 0; 0.0116828; 
+1.79769e+308; 0; 0.0121962; 
+1.79769e+308; 0; 0.0126838; 
+1.79769e+308; 0; 0.0126152; 
+1.79769e+308; 0; 0.0116785; 
+1.79769e+308; 0; 0.0120689; 
+1.79769e+308; 0; 0.0131908; 
+1.79769e+308; 0; 0.0126434; 
+1.79769e+308; 0; 0.011904; 
+1.79769e+308; 0; 0.0129152; 
+1.79769e+308; 0; 0.0124943; 
+1.79769e+308; 0; 0.0107952; 
+1.79769e+308; 0; 0.0109269; 
+1.79769e+308; 0; 0.0110024; 
+1.79769e+308; 0; 0.0127111; 
+1.79769e+308; 0; 0.0119493; 
+1.79769e+308; 0; 0.0124578; 
+1.79769e+308; 0; 0.0120845; 
+1.79769e+308; 0; 0.0120207; 
+1.79769e+308; 0; 0.0122857; 
+1.79769e+308; 0; 0.0122403; 
+1.79769e+308; 0; 0.0127491; 
+1.79769e+308; 0; 0.0111509; 
+1.79769e+308; 0; 0.0118623; 
+1.79769e+308; 0; 0.0124221; 
+1.79769e+308; 0; 0.0124725; 
+1.79769e+308; 0; 0.0116201; 
+1.79769e+308; 0; 0.0110648; 
+1.79769e+308; 0; 0.012685; 
+1.79769e+308; 0; 0.0117692; 
+1.79769e+308; 0; 0.0114687; 
+1.79769e+308; 0; 0.0116116; 
+.
+KPIECE (ompl)
+0 common properties
+3 properties for each run
+average_waypoint_distance REAL
+solved BOOLEAN
+time REAL
+50 runs
+1.79769e+308; 0; 0.00266696; 
+1.79769e+308; 0; 0.0116453; 
+1.79769e+308; 0; 0.0126097; 
+1.79769e+308; 0; 0.0122993; 
+1.79769e+308; 0; 0.0121863; 
+1.79769e+308; 0; 0.0127276; 
+1.79769e+308; 0; 0.0114301; 
+1.79769e+308; 0; 0.0120896; 
+1.79769e+308; 0; 0.012462; 
+1.79769e+308; 0; 0.0123301; 
+1.79769e+308; 0; 0.0114767; 
+1.79769e+308; 0; 0.0123479; 
+1.79769e+308; 0; 0.0131923; 
+1.79769e+308; 0; 0.0122098; 
+1.79769e+308; 0; 0.011432; 
+1.79769e+308; 0; 0.0119588; 
+1.79769e+308; 0; 0.0139484; 
+1.79769e+308; 0; 0.0117766; 
+1.79769e+308; 0; 0.0120612; 
+1.79769e+308; 0; 0.0119937; 
+1.79769e+308; 0; 0.0129647; 
+1.79769e+308; 0; 0.011888; 
+1.79769e+308; 0; 0.0121852; 
+1.79769e+308; 0; 0.0124859; 
+1.79769e+308; 0; 0.0128043; 
+1.79769e+308; 0; 0.0120487; 
+1.79769e+308; 0; 0.0122532; 
+1.79769e+308; 0; 0.0119184; 
+1.79769e+308; 0; 0.0126747; 
+1.79769e+308; 0; 0.0113055; 
+1.79769e+308; 0; 0.0123708; 
+1.79769e+308; 0; 0.0123107; 
+1.79769e+308; 0; 0.0123344; 
+1.79769e+308; 0; 0.0120523; 
+1.79769e+308; 0; 0.0123583; 
+1.79769e+308; 0; 0.0123528; 
+1.79769e+308; 0; 0.0125189; 
+1.79769e+308; 0; 0.0101929; 
+1.79769e+308; 0; 0.0118415; 
+1.79769e+308; 0; 0.0127649; 
+1.79769e+308; 0; 0.0114052; 
+1.79769e+308; 0; 0.0124551; 
+1.79769e+308; 0; 0.0126504; 
+1.79769e+308; 0; 0.0123783; 
+1.79769e+308; 0; 0.0113388; 
+1.79769e+308; 0; 0.0125032; 
+1.79769e+308; 0; 0.0125436; 
+1.79769e+308; 0; 0.0124824; 
+1.79769e+308; 0; 0.011751; 
+1.79769e+308; 0; 0.0124853; 
+.

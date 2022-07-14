@@ -1,0 +1,25 @@
+# This is an example configuration that loads the "Kitchen" scene from the
+# local MoveIt warehouse and benchmarks the "panda_arm" group in the Pick1
+# query using the Start1 initial state (all pre-stored in the local warehouse)
+
+# Three different planners from OMPL are run a total of 50 times each, with a
+# maximum of 10 seconds per run.  Output is stored in the /tmp/moveit_benchmarks directory.
+
+benchmark_config:
+    warehouse:
+        host: localhost
+        port: 33829
+        scene_name: ObstaclesScene     # Required
+    parameters:
+        name: ObstaclesScenePick1
+        runs: 50
+        group: arm       # Required
+        timeout: 10.0
+        output_directory: /home/iman/version-control/ws_moveit_exp1/src/r_mini2/benchmarks/obstacle_separate/
+        queries: Pick1
+        start_states: Start1
+    planning_pipelines:
+        - name: ompl
+          planners:
+            - ProjEST
+
