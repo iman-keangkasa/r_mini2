@@ -6,9 +6,14 @@
     <arg name="load_robot_description" value="true" />
   </include-->
 
-  <node name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+    <param name="/use_gui" value="false"/>
     <rosparam param="/source_list">[/joint_states]</rosparam>
   </node>
+ 
+  <!--node name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
+    <rosparam param="/source_list">[/joint_states]</rosparam>
+  </node-->
 
   <include file="$(find r_mini_moveit_config)/launch/move_group.launch">
     <arg name="publish_monitored_planning_scene" value="true" />
