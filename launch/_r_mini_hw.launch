@@ -5,7 +5,7 @@
   
   <arg name="gazebo_gui" default="true"/>
   <include file="$(find r_mini2)/launch/_gazebo2.launch"/>
-  <include file="$(find r_mini2)/launch/_ros_controllers2.launch"/>
+  <include file="$(find r_mini2)/launch/_ros_controllers2_hw.launch"/>
 
   <!-- Load the controllers spawned in _ros_controller.launch -->
   <!--node name="controller_manager" pkg="controller_manager" type="controller_manager" respawn="false" output="screen" args="load arm_controller"/-->
