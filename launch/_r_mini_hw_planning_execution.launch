@@ -14,11 +14,13 @@
   <!--node name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">
     <rosparam param="/source_list">[/joint_states]</rosparam>
   </node-->
+  <arg name="sensor_type" default="sensors_kinect_depthmap"/>
 
   <node name="trajectory_listener_node" pkg="trajectory_listener" type="trajectory_listener_node"/>
 
   <include file="$(find r_mini2)/launch/move_group.launch">
     <arg name="publish_monitored_planning_scene" value="true" />
+    <arg name="sensor_type" value="$(arg sensor_type)"/>
   </include>
   
   <arg name="rviz_config" default="true"/>

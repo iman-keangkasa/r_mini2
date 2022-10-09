@@ -1,5 +1,6 @@
 <launch>
 
+  <arg name="sensor_type" default="sensors_kinect_pointcloud" />
   <rosparam command="load" file="$(find r_mini_moveit_config)/config/_joint_names.yaml"/>
 
   <!--include file="$(find r_mini_moveit_config)/launch/planning_context.launch" >
@@ -18,6 +19,7 @@
   <!--node name="trajectory_listener_node" pkg="trajectory_listener" type="trajectory_listener_node"/-->
 
   <include file="$(find r_mini2)/launch/move_group.launch">
+    <arg name="sensor_type" value="$(arg sensor_type)"/>
     <arg name="publish_monitored_planning_scene" value="true" />
   </include>
   

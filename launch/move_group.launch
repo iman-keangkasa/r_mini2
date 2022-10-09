@@ -18,6 +18,14 @@
   <arg name="fake_execution_type" default="interpolate"/>
   <arg name="max_safe_path_cost" default="1"/>
   <arg name="publish_monitored_planning_scene" default="true"/>
+  <!-- sensor type 
+      valid values are:
+        (1) sensors_kinect_depthmap
+        (2) sensors_kinect_pointcloud
+        (3) sensors_realsense_depthmap
+        (4) sensors_realsense_pointcloud-->
+  <arg name="sensor_type" default="sensors_kinect_pointcloud"/>
+
 
   <arg name="capabilities" default=""/>
   <arg name="disable_capabilities" default=""/>
@@ -78,6 +86,7 @@
   <!-- Sensors Functionality -->
   <include ns="move_group" file="$(dirname)/sensor_manager.launch.xml" if="$(arg allow_trajectory_execution)">
     <arg name="moveit_sensor_manager" value="r_mini" />
+    <arg name="sensor_type" value="$(arg sensor_type)"/>
   </include>
 
   <!-- Start the actual move_group node/action server -->

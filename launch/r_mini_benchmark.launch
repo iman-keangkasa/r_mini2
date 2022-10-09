@@ -1,6 +1,6 @@
 <launch>
   <!-- benchmark options file -->
-  <arg name="bench_opts" default="$(find r_mini2)/config/bm_ompl_wc_LBTRRT.yaml"/>
+  <arg name="bench_opts" default="$(find r_mini2)/config/bm_ompl_wc_PRM.yaml"/>
 
   <!-- Load robot settings -->
   <include file="$(find r_mini2)/launch/planning_context.launch">

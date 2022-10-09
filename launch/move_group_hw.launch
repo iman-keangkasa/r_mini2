@@ -20,6 +20,13 @@
   <arg name="max_safe_path_cost" default="1"/>
   <arg name="jiggle_fraction" default="0.05" />
   <arg name="publish_monitored_planning_scene" default="true"/>
+  <!-- sensor type 
+      valid values are:
+        (1) sensors_kinect_depthmap
+        (2) sensors_kinect_pointcloud
+        (3) sensors_realsense_depthmap
+        (4) sensors_realsense_pointcloud-->
+  <arg name="sensor_type" default="sensors_kinect_pointcloud"/>
 
   <arg name="capabilities" default=""/>
   <arg name="disable_capabilities" default=""/>
@@ -51,22 +58,7 @@
   </include-->
   <group ns="move_group/planning_pipelines">
 
-    <!-- OMPL -->
-    <include file="$(dirname)/planning_pipeline.launch.xml">
-      <arg name="pipeline" value="ompl" />
-    </include>
-
-    <!-- CHOMP -->
-    <include file="$(dirname)/planning_pipeline.launch.xml">
-      <arg name="pipeline" value="chomp" />
-    </include>
-
-    <!-- Pilz Industrial Motion -->
-    <include file="$(dirname)/planning_pipeline.launch.xml">
-      <arg name="pipeline" value="pilz_industrial_motion_planner" />
-    </include>
-
-    <!-- Support custom planning pipeline -->
+    <!-- OMPL --> <include file="$(dirname)/planning_pipeline.launch.xml"> <arg name="pipeline" value="ompl" /> </include> <!-- CHOMP --> <include file="$(dirname)/planning_pipeline.launch.xml"> <arg name="pipeline" value="chomp" /> </include> <!-- Pilz Industrial Motion --> <include file="$(dirname)/planning_pipeline.launch.xml"> <arg name="pipeline" value="pilz_industrial_motion_planner" /> </include> <!-- Support custom planning pipeline -->
     <include if="$(eval arg('pipeline') not in ['ompl', 'chomp', 'pilz_industrial_motion_planner'])"
              file="$(dirname)/planning_pipeline.launch.xml">
       <arg name="pipeline" value="$(arg pipeline)" />
@@ -84,6 +76,7 @@
   <!-- Sensors Functionality -->
   <include ns="move_group" file="$(find r_mini2)/launch/sensor_manager.launch.xml" if="$(arg allow_trajectory_execution)">
     <arg name="moveit_sensor_manager" value="r_mini" />
+    <arg name="sensor_type" value="$(arg sensor_type)"/>
   </include>
 
   <!-- Start the actual move_group node/action server -->
