@@ -25,8 +25,15 @@
         (1) sensors_kinect_depthmap
         (2) sensors_kinect_pointcloud
         (3) sensors_realsense_depthmap
-        (4) sensors_realsense_pointcloud-->
-  <arg name="sensor_type" default="sensors_kinect_pointcloud"/>
+        (4) sensors_realsense_pointcloud [use for hw exp]
+        (5) sensors_sims_kinect_depthmap
+        (6) sensors_sims_kinect_pointcloud
+        (7) sensors_sims_realsense_depthmap
+        (8) sensors_sims_realsense_pointcloud [use for sim exp]
+  -->
+  <arg name="sensor_type" default="sensors_realsense_pointcloud"/>
+  <arg name="octomap_resolution" default="0.02"/>
+  <arg name="max_range"  default="0.75"/>
 
   <arg name="capabilities" default=""/>
   <arg name="disable_capabilities" default=""/>
@@ -77,6 +84,8 @@
   <include ns="move_group" file="$(find r_mini2)/launch/sensor_manager.launch.xml" if="$(arg allow_trajectory_execution)">
     <arg name="moveit_sensor_manager" value="r_mini" />
     <arg name="sensor_type" value="$(arg sensor_type)"/>
+    <arg name="octomap_resolution" value="$(arg octomap_resolution)"/>
+    <arg name="max_range" value="$(arg max_range)"/>
   </include>
 
   <!-- Start the actual move_group node/action server -->

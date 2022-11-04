@@ -2,9 +2,15 @@
 <launch>
   <arg name="paused" default="false" />
   <arg name="gui" default="true"/>
+  <!--I need to invoke $$ set_local_gazebo_path (.bashrc_alias_list) before I can 
+  set worlds available in ROS package gazebo_sims  
+  example: worlds/moving_cylinder.world -->
+  <arg name="world_name" default="worlds/empty.world"/>
   
   <arg name="gazebo_gui" default="true"/>
-  <include file="$(find r_mini2)/launch/_gazebo2.launch"/>
+  <include file="$(find r_mini2)/launch/_gazebo2.launch">
+    <arg name="world_name" value="$(arg world_name)"/>
+  </include>
   <include file="$(find r_mini2)/launch/_ros_controllers2.launch"/>
 
   <!-- Load the controllers spawned in _ros_controller.launch -->

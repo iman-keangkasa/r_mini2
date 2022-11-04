@@ -1,6 +1,8 @@
 <launch>
-
-  <arg name="sensor_type" default="sensors_kinect_pointcloud" />
+  <!--Arguments for move_group -->
+  <arg name="sensor_type" default="sensors_sims_realsense_pointcloud"/>
+  <arg name="octomap_resolution" default="0.02"/>
+  <arg name="max_range" default="0.75"/>
   <rosparam command="load" file="$(find r_mini_moveit_config)/config/_joint_names.yaml"/>
 
   <!--include file="$(find r_mini_moveit_config)/launch/planning_context.launch" >

@@ -1,0 +1,25 @@
+<launch>
+  <arg name="sim" default="true"/>
+  <arg name="output_filename" default="sims_obs_avoidance"/>
+  
+  <!-- Start simple_move_group under simulation context -->
+  <group if="$(arg sim)">
+    <!--record necessary topics-->
+    <node pkg="rosbag" type="record" name="rosbag_sim_record"
+      args="record -o $(find rosbag_recording)/sim_obs_avoidance /joint_states /tf"
+      />
+
+    <node pkg="rv7fr_planners_interface" type="simple_move_group_sim_exp" name="simple_move_group_sim_node"/>
+  </group>
+
+  <!-- Start simple_move_group under hardware(exp) context -->
+  <group unless="$(arg sim)">
+    <node pkg="rosbag" type="record" name="rosbag_sim_record"
+      args="record -o $(find rosbag_recording)/$(arg output_filename) /joint_states /tf /tf_static"
+      />
+
+    <node pkg="rv7fr_planners_interface" type="simple_move_group_sim_exp" name="simple_move_group_exp_node"/>
+
+  </group>
+</launch>
+

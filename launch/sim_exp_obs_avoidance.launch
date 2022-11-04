@@ -1,0 +1,18 @@
+<launch>
+  <arg name="sim" default="true"/>
+  <!--arg name="exp" default="false"/-->
+  <arg name="rviz_setting" default="obstacle_avoidance_sim"/>
+
+  <group if="$(arg sim)">
+    <include file="$(find r_mini2)/launch/_r_mini.launch"/>
+    <include file="$(find r_mini2)/launch/_r_mini_planning_execution.launch">
+      <arg name="rviz_setting" value="$(arg rviz_setting)"/>
+    </include>
+  </group>
+  <group unless="$(arg sim)">
+    <include file="$(find r_mini2)/launch/r_mini_exp_obs_avoidance_static.launch">
+      <arg name="rviz_setting" value="$(arg rviz_setting)"/>
+    </include>
+  </group>
+</launch>
+

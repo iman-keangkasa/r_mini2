@@ -1,0 +1,90 @@
+<launch>
+  <!--r_mini_driver-specific parameters/-->
+  <arg name="usb_port"                default="/dev/ttyUSB0"/>
+  <arg name="dxl_baud_rate"           default="4000000"/>
+  <arg name="namespace"               default="r_mini_driver_node"/>
+
+  <arg name="use_moveit"              default="false"/>
+  <arg name="use_joint_state"         default="false"/>
+  <arg name="use_cmd_vel"             default="false"/>
+  <arg name="motor_group"             default="r_mini"/>
+  <arg name="remap_joint_states"      default="false"/>
+  <arg name="remap_joint_trajectory" default="false"/>
+  <arg name="period"                  default="0.01"/>
+  <arg name="dynamixel_info"          value="$(find r_mini_driver)/config/$(arg motor_group).yaml"/>
+  
+  <!-- Sensors-specific parameters-->
+  <!-- Sensor: Realsense-->
+  <arg name="align_depth" default="true"/>
+  <arg name="filters" default="pointcloud"/>
+  <arg name="sensor_type" value="sensors_realsense_pointcloud"/>
+  <arg name="octomap_resolution" default="0.02"/> 
+  <arg name="max_range" default="0.75"/>
+  <!-- Sensor: Kinect-->
+
+  <!--rtabmap for realsense-->
+  <arg name="use_rtabmap" default="true"/>
+  <arg name="rtabmap_args" default="--delete_db_on_start"/>
+  <arg name="depth_topic" default="/camera/aligned_depth_to_color/image_raw"/>
+  <arg name="rgb_topic" default="/camera/color/image_raw"/>
+  <arg name="camera_info_topic" default="/camera/color/camera_info"/>
+  <arg name="approx_sync" default="false"/>
+  <arg name="rtabmapviz" default="true"/>
+  <arg name="rviz" default="false"/>
+  
+  <!-- moveit-specific parameters-->
+  <arg name="db" default="false" />
+  <arg name="db_path" default="$(find r_mini2)/default_warehouse_mongo_db" />
+  <arg name="debug" default="false" />
+  <arg name="load_robot_description" default="false"/>
+  <arg name="rviz_setting" default="obstacle_avoidance_exp"/>
+  <!-- start r_mini hardware/-->
+  <include file="$(find r_mini_driver)/launch/r_mini_driver.launch"/>
+  
+  <!--Start Kinect and Realsense-->
+  <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+    <arg name="align_depth" value="$(arg align_depth)" />
+    <arg name="filters" value="$(arg filters)"/>
+  </include>
+
+  <include file="$(find openni_launch)/launch/openni.launch" />
+
+  <!-- Start rtabmap -->
+  <!--include if="$(arg use_rtabmap)"
+    file="$(find rtabmap_ros)/launch/rtabmap.launch">
+    <arg name="rtabmap_args" value="$(arg rtabmap_args)"/>
+    <arg name="depth_topic" value="$(arg depth_topic)"/>
+    <arg name="rgb_topic" value="$(arg rgb_topic)"/>
+    <arg name="camera_info_topic" value="$(arg camera_info_topic)"/>
+    <arg name="approx_sync" value="$(arg approx_sync)"/>
+    <arg name="rtabmapviz" value="$(arg rtabmapviz)"/>
+    <arg name="rviz" value="$(arg rviz)"/>
+  </include-->
+
+  <!-- Start planning_context and move_group -->
+  <include file="$(find r_mini2)/launch/planning_context_hw.launch">
+    <arg name="load_robot_description" value="$(arg load_robot_description)"/>
+  </include>
+
+  <include file="$(find r_mini2)/launch/move_group_hw.launch">
+    <arg name="allow_trajectory_execution" value="true"/>
+    <arg name="fake_execution" value="false"/>
+    <arg name="info" value="true"/>
+    <arg name="debug" value="$(arg debug)"/>
+    <arg name="octomap_resolution" value="$(arg octomap_resolution)"/>
+    <arg name="max_range" value="$(arg max_range)"/>
+    <arg name="sensor_type" value="$(arg sensor_type)"/>
+  </include>
+
+  <include file="$(find r_mini2)/launch/moveit_rviz.launch">
+    <arg name="rviz_config" value="$(find r_mini2)/rviz/$(arg rviz_setting).rviz"/>
+    <arg name="debug" value="$(arg debug)"/>
+  </include>
+
+  <include if="$(arg db)"
+	   file="$(find r_mini2)/launch/default_warehouse_db.launch">
+    <arg name="moveit_warehouse_database_path" value="$(arg db_path)"/>
+  </include>
+
+  <!--node name="simple_move_group_node" type="simple_move_group" pkg="rv7fr_planners_interface" respawn="false" output="screen"/-->
+</launch>
