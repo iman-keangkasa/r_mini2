@@ -2,9 +2,12 @@
   <arg name="sim" default="true"/>
   <!--arg name="exp" default="false"/-->
   <arg name="rviz_setting" default="obstacle_avoidance_sim"/>
-
+  <arg name="robot_urdf" default="arm_test.urdf.xacro"/>
+  <arg name="urdf_path" default="$(find r_mini_description)/urdf/$(arg robot_urdf)"/>
   <group if="$(arg sim)">
-    <include file="$(find r_mini2)/launch/_r_mini.launch"/>
+    <include file="$(find r_mini2)/launch/_r_mini.launch">
+      <arg name="urdf_path" value="$(arg urdf_path)"/>
+    </include>
     <include file="$(find r_mini2)/launch/_r_mini_planning_execution.launch">
       <arg name="rviz_setting" value="$(arg rviz_setting)"/>
     </include>
