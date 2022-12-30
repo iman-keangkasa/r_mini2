@@ -1,5 +1,16 @@
 <launch>
 
+   <!-- sensor type 
+      valid values are:
+        (1) sensors_kinect_depthmap
+        (2) sensors_kinect_pointcloud
+        (3) sensors_realsense_depthmap
+        (4) sensors_realsense_pointcloud
+        (5) sensors_sims_kinect_depthmap
+        (6) sensors_sims_kinect_pointcloud
+        (7) sensors_sims_realsense_depthmap
+        (8) sensors_sims_realsense_pointcloud-->
+  <arg name="sensor_type" default="sensors_sims_realsense_pointcloud"/>
   <!-- specify which rviz setting to use (dont add .rviz) -->
   <arg name="rviz_setting" default="plotjuggler_playback"/>
   <!-- specify the planning pipeline -->
@@ -55,6 +66,7 @@
     <arg name="debug" value="$(arg debug)"/>
     <arg name="pipeline" value="$(arg pipeline)"/>
     <arg name="load_robot_description" value="$(arg load_robot_description)"/>
+    <arg name="sensor_type" value="$(arg sensor_type)"/>
   </include>
 
   <!-- Run Rviz and load the default config to see the state of the move_group node -->
